@@ -1,0 +1,23 @@
+{
+    "name": "codenamegary/l4layouts",
+    "description": "",
+    "authors": [
+        {
+            "name": "Gary Saunders",
+            "email": "gary@powrit.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "4.0.x"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations"
+        ],
+        "psr-0": {
+            "Codenamegary\\L4layouts": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
