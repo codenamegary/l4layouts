@@ -19,6 +19,7 @@ class L4layoutsServiceProvider extends ServiceProvider {
 	public function boot()
 	{
 		$this->package('codenamegary/l4layouts');
+        include __DIR__.'/composers.php';
 	}
 
 	/**
