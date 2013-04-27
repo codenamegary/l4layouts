@@ -1,12 +1,14 @@
 {
     "name": "codenamegary/l4layouts",
-    "description": "",
+    "description": "Simple asset manager (similar to Laravel 3) and base layouts for Twitter Bootstrap and Foundation based views.",
+    "keywords": ["laravel","l4"],
     "authors": [
         {
             "name": "Gary Saunders",
             "email": "gary@powrit.com"
         }
     ],
+    "license": "MIT",
     "require": {
         "php": ">=5.3.0",
         "illuminate/support": "4.0.x"
