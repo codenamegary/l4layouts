@@ -5,7 +5,8 @@
     "authors": [
         {
             "name": "Gary Saunders",
-            "email": "gary@powrit.com"
+            "email": "gary@powrit.com",
+            "role": "Developer"
         }
     ],
     "license": "MIT",
