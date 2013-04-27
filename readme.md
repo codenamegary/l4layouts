@@ -7,19 +7,17 @@ Provides an ultra basic Asset Manager similar to Laravel 3 as well as a couple o
 Example usage:
 
 #####Create a collection and add assets
-```php```
+:::php
 $assets = new \Codenamegary\L4layouts\AssetCollection('assets');
 $assets->collection('header')->addCss(asset('css/styles.css'));
 $assets->collection('footer')->addJs(asset('js/footerjs.js'));
-```php```
 
 #####Pass assets to your view
-```php```
+:::php
 $header = View::make('header')->with('assets',$assets);
-```php```
 
 #####Render the assets inside your view
-```php```
+:::php
 // Render CSS
 $assets->collection('header')->render('css');
 // Render JS
@@ -27,4 +25,3 @@ $assets->collection('footer')->render('js');
 // Or recursively render everything, including any sub-collections
 $assets->render('css');
 $assets->render('js');
-```php```
