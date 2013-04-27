@@ -1,4 +1,4 @@
 @yield('footer')
-{{ $assets['js']['footer'] }}
+{{ $assets->collection('footer')->render('js') }}
 </body>
 </html>

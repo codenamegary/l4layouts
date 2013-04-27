@@ -6,7 +6,7 @@
     <meta name="keywords" content="{{ isset( $meta['keywords'] ) ? $meta['keywords'] : '' }}">
     <meta name="author" content="{{ isset( $meta['author'] ) ? $meta['author'] : '' }}">
     <meta charset="{{ isset( $meta['charset'] ) ? $meta['charset'] : 'UTF-8' }}">
-    {{ $assets['css']['header'] }}
-    {{ $assets['js']['header'] }}
+    {{ $assets->collection('header')->render('css') }}
+    {{ $assets->collection('header')->render('js') }}
 </head>
 <body>

@@ -30,6 +30,7 @@ class L4layoutsServiceProvider extends ServiceProvider {
 	public function register()
 	{
 		//
+        $this->app['config']->package('codenamegary/l4layouts', __DIR__.'/../../config');
 	}
 
 	/**

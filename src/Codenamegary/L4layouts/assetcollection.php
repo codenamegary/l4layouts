@@ -40,6 +40,7 @@ class AssetCollection {
         {
             $output .= $asset->render();
         }
+        return $output;
     }
     
     // Returns or creates a collection with name $name
