@@ -1,14 +1,19 @@
 <?php
 
-View::composer(array('l4layouts::bootstrap.blank'),function($view){
+$secure = Config::get('l4layouts::settings.ssl',false);
+    
+View::composer(array('l4layouts::bootstrap.blank'),function($view)use($secure)
+{
+
+
 
     // Grab the existing data bound to the view
     $existingData = $view->getData();
     
     // If assets have already been injected into the view, use them. 
     $assets = isset( $existingData[ 'assets' ] ) ? $existingData[ 'assets' ] : new Codenamegary\L4layouts\AssetCollection( 'assets' ) ;
-    $assets->collection('header')->addCss( asset('packages/codenamegary/l4layouts/bootstrap/css/bootstrap.min.css', true ) );
-    $assets->collection('footer')->addJs( asset('packages/codenamegary/l4layouts/bootstrap/js/bootstrap.min.js', true ) );
+    $assets->collection('header')->addCss( asset('packages/codenamegary/l4layouts/bootstrap/css/bootstrap.min.css', $secure ) );
+    $assets->collection('footer')->addJs( asset('packages/codenamegary/l4layouts/bootstrap/js/bootstrap.min.js', $secure ) );
     $view->with( 'assets', $assets );
 
     $baseMeta = array(
@@ -23,7 +28,8 @@ View::composer(array('l4layouts::bootstrap.blank'),function($view){
     
 });
 
-View::composer(array('l4layouts::foundation.blank'),function($view){
+View::composer(array('l4layouts::foundation.blank'),function($view)use($secure)
+{
 
     // Grab the existing data bound to the view
     $existingData = $view->getData();
@@ -32,9 +38,9 @@ View::composer(array('l4layouts::foundation.blank'),function($view){
     $assets = isset( $existingData[ 'assets' ] ) ? $existingData[ 'assets' ] : new Codenamegary\L4layouts\AssetCollection( 'assets' ) ;
     // Init and create a footer collection if one doesn't already exist
     $assets->collection('footer');
-    $assets->collection('header')->addCss( asset('packages/codenamegary/l4layouts/foundation/css/normalize.css', true ) );
-    $assets->collection('header')->addCss( asset('packages/codenamegary/l4layouts/foundation/css/foundation.min.css', true ) );
-    $assets->collection('header')->addJs( asset('packages/codenamegary/l4layouts/foundation/js/foundation.min.js', true ) );
+    $assets->collection('header')->addCss( asset('packages/codenamegary/l4layouts/foundation/css/normalize.css', $secure ) );
+    $assets->collection('header')->addCss( asset('packages/codenamegary/l4layouts/foundation/css/foundation.min.css', $secure ) );
+    $assets->collection('header')->addJs( asset('packages/codenamegary/l4layouts/foundation/js/foundation.min.js', $secure ) );
 
     $view->with( 'assets', $assets );
     
