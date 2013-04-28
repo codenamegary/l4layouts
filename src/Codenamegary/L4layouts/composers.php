@@ -1,6 +1,6 @@
 <?php
 
-$secure = Config::get('l4sacs::settings.ssl',false);
+$secure = Config::get('l4layouts::settings.ssl',false);
 $assets = App::make('l4sacs');    
 $baseMeta = array(
     'description'   => '',
