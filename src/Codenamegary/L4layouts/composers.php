@@ -16,6 +16,7 @@ View::composer(array('l4layouts::bootstrap.blank'),function($view)use($secure,$a
 
     $assets = (isset($existingData['assets'])) ? $existingData['assets'] : $assets;
     $assets->collection('header')->addCss( asset('packages/codenamegary/l4layouts/bootstrap/css/bootstrap.min.css', $secure ) );
+    $assets->collection('header')->addCss( asset('packages/codenamegary/l4layouts/font-awesome/css/font-awesome.min.css', $secure ) );
     $assets->collection('footer')->addJs( asset('packages/codenamegary/l4layouts/bootstrap/js/bootstrap.min.js', $secure ) );
     $view->with( 'assets', $assets );
 
@@ -34,6 +35,7 @@ View::composer(array('l4layouts::foundation.blank'),function($view)use($secure,$
     $assets->collection('footer');
     $assets->collection('header')->addCss( asset('packages/codenamegary/l4layouts/foundation/css/normalize.css', $secure ) );
     $assets->collection('header')->addCss( asset('packages/codenamegary/l4layouts/foundation/css/foundation.min.css', $secure ) );
+    $assets->collection('header')->addCss( asset('packages/codenamegary/l4layouts/font-awesome/css/font-awesome.min.css', $secure ) );
     $assets->collection('header')->addJs( asset('packages/codenamegary/l4layouts/foundation/js/foundation.min.js', $secure ) );
     $view->with( 'assets', $assets );
 
