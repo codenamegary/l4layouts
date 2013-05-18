@@ -15,5 +15,6 @@ foreach($bootstrapVersions as $version)
         $collection->stylesheet($basePath.'/css/bootstrap.min.css');
         $collection->stylesheet('packages/codenamegary/l4layouts/font-awesome/css/font-awesome.css');
         $collection->javascript($basePath.'/js/jquery-1.9.1.min.js');
+        $collection->javascript($basePath.'/js/bootstrap.min.js');
     });
 }
