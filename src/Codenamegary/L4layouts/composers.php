@@ -1,7 +1,6 @@
 <?php
 
 $secure = Config::get('l4layouts::settings.ssl',false);
-$assets = App::make('l4sacs');    
 $baseMeta = array(
     'description'   => '',
     'keywords'      => '',
@@ -9,36 +8,31 @@ $baseMeta = array(
     'charset'       => 'UTF-8',
 );
 
-View::composer(array('l4layouts::bootstrap.blank'),function($view)use($secure,$assets,$baseMeta)
+$bootstrapVersion = Config::get('l4layouts::settings.bootstrap.version');
+View::share('bootstrapVersion',$bootstrapVersion);
+View::composer(array('l4layouts::bootstrap.blank'),function($view)use($bootstrapVersion,$baseMeta)
 {
     // Grab the existing data bound to the view
     $existingData = $view->getData();
-
-    $assets = (isset($existingData['assets'])) ? $existingData['assets'] : $assets;
-    $assets->collection('header')->addCss( asset('packages/codenamegary/l4layouts/bootstrap/css/bootstrap.min.css', $secure ) );
-    $assets->collection('header')->addCss( asset('packages/codenamegary/l4layouts/font-awesome/css/font-awesome.min.css', $secure ) );
-    $assets->collection('footer')->addJs( asset('packages/codenamegary/l4layouts/bootstrap/js/bootstrap.min.js', $secure ) );
-    $view->with( 'assets', $assets );
-
     $meta = isset( $existingData[ 'meta' ] ) ? array_merge( $baseMeta, $existingData[ 'meta' ] ) : $baseMeta ;
     $view->with( 'meta', $meta );
-    
+
 });
 
-View::composer(array('l4layouts::foundation.blank'),function($view)use($secure,$assets,$baseMeta)
+$foundationVersion = Config::get('l4layouts::settings.foundation.version');
+View::composer(array('l4layouts::foundation.blank'),function($view)use($foundationVersion,$baseMeta)
 {
-    // Grab the existing data bound to the view
-    $existingData = $view->getData();
 
-    $assets = (isset($existingData['assets'])) ? $existingData['assets'] : $assets;
     // Init and create a footer collection if one doesn't already exist
-    $assets->collection('footer');
+    /*$assets->collection('footer');
     $assets->collection('header')->addCss( asset('packages/codenamegary/l4layouts/foundation/css/normalize.css', $secure ) );
     $assets->collection('header')->addCss( asset('packages/codenamegary/l4layouts/foundation/css/foundation.min.css', $secure ) );
     $assets->collection('header')->addCss( asset('packages/codenamegary/l4layouts/font-awesome/css/font-awesome.min.css', $secure ) );
     $assets->collection('header')->addJs( asset('packages/codenamegary/l4layouts/foundation/js/foundation.min.js', $secure ) );
-    $view->with( 'assets', $assets );
+    $view->with( 'assets', $assets );*/
 
+    // Grab the existing data bound to the view
+    $existingData = $view->getData();
     $meta = isset( $existingData[ 'meta' ] ) ? array_merge( $baseMeta, $existingData[ 'meta' ] ) : $baseMeta ;
     $view->with( 'meta', $meta );
     

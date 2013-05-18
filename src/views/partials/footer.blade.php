@@ -1,4 +1,4 @@
 @yield('footer')
-{{ $assets->collection('footer')->render('js') }}
+{{ basset_javascripts('bootstrap-'.$bootstrapVersion) }}
 </body>
 </html>

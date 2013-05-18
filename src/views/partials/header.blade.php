@@ -6,7 +6,6 @@
     <meta name="keywords" content="{{ isset( $meta['keywords'] ) ? $meta['keywords'] : '' }}">
     <meta name="author" content="{{ isset( $meta['author'] ) ? $meta['author'] : '' }}">
     <meta charset="{{ isset( $meta['charset'] ) ? $meta['charset'] : 'UTF-8' }}">
-    {{ $assets->collection('header')->render('css') }}
-    {{ $assets->collection('header')->render('js') }}
+    {{ basset_stylesheets('bootstrap-'.$bootstrapVersion) }}
 </head>
 <body>
