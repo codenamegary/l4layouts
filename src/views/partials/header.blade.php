@@ -10,4 +10,3 @@
     {{ basset_stylesheets('header') }}
     {{ basset_javascripts('header') }}
 </head>
-<body>
