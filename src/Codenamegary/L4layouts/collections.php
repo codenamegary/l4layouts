@@ -2,7 +2,7 @@
 
 Basset::package('codenamegary/l4layouts');
 
-$bootstrapVersions = Config::get('l4layouts::bootstrap.versions');
+$bootstrapVersions = Config::get('l4layouts::settings.bootstrap.versions');
 foreach($bootstrapVersions as $version)
 {
     $dirName = 'bootstrap-'.$version;
@@ -15,8 +15,8 @@ foreach($bootstrapVersions as $version)
     });
 }
 
-$foundationVersions = Config::get('l4layouts::foundation.versions');
-foreach($bootstrapVersions as $version)
+$foundationVersions = Config::get('l4layouts::settings.foundation.versions');
+foreach($foundationVersions as $version)
 {
     $dirName = 'foundation-'.$version;
     $basePath = 'packages/codenamegary/l4layouts/'.$dirName;
@@ -29,7 +29,7 @@ foreach($bootstrapVersions as $version)
     });
 }
 
-$fontAwesomeVersions = Config::get('l4layouts::font-awesome.versions');
+$fontAwesomeVersions = Config::get('l4layouts::settings.font-awesome.versions');
 foreach($fontAwesomeVersions as $version)
 {
     $dirName = 'font-awesome-'.$version;
