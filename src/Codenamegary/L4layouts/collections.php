@@ -1,16 +1,17 @@
 <?php
 
 Basset::package('codenamegary/l4layouts');
+$commonPath = 'packages/codenamegary/l4layouts/common';
 
 $bootstrapVersions = Config::get('l4layouts::settings.bootstrap.versions');
 foreach($bootstrapVersions as $version)
 {
     $dirName = 'bootstrap-'.$version;
     $basePath = 'packages/codenamegary/l4layouts/'.$dirName;
-    Basset::collection($dirName,function($collection)use($basePath)
+    Basset::collection($dirName,function($collection)use($basePath,$commonPath)
     {
         $collection->stylesheet($basePath.'/css/bootstrap.min.css');
-        $collection->javascript($basePath.'/js/jquery-1.9.1.min.js');
+        $collection->javascript($commonPath.'/js/jquery-1.9.1.min.js');
         $collection->javascript($basePath.'/js/bootstrap.min.js');
     });
 }
@@ -20,12 +21,11 @@ foreach($foundationVersions as $version)
 {
     $dirName = 'foundation-'.$version;
     $basePath = 'packages/codenamegary/l4layouts/'.$dirName;
-    Basset::collection($dirName,function($collection)use($basePath)
+    Basset::collection($dirName,function($collection)use($basePath,$commonPath)
     {
-        $collection->stylesheet($basePath.'/css/bootstrap.min.css');
-        $collection->stylesheet('packages/codenamegary/l4layouts/font-awesome/css/font-awesome.css');
-        $collection->javascript($basePath.'/js/jquery-1.9.1.min.js');
-        $collection->javascript($basePath.'/js/bootstrap.min.js');
+        $collection->stylesheet($basePath.'/css/foundation.min.css');
+        $collection->javascript($commonPath.'/js/jquery-1.9.1.min.js');
+        $collection->javascript($basePath.'/js/foundation.min.js');
     });
 }
 
@@ -34,7 +34,7 @@ foreach($fontAwesomeVersions as $version)
 {
     $dirName = 'font-awesome-'.$version;
     $basePath = 'packages/codenamegary/l4layouts/'.$dirName;
-    Basset::collection($dirName,function($collection)use($basePath)
+    Basset::collection($dirName,function($collection)use($basePath,$commonPath)
     {
         $collection->stylesheet($basePath.'/css/font-awesome.css');
     });
