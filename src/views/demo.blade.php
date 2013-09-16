@@ -16,10 +16,16 @@
             <h3>Example View</h3>
             <p>To use this layout, simply create a view as follows....</p>
             <label for="example-view">Example View</label>
-            <textarea cols="100" rows="4" class="form-control" style="width:100%;height:100px;">
+            <textarea cols="100" rows="4" class="form-control" style="width:100%;height:200px;">
                 {{ htmlentities('@') }}extends('l4layouts::{{ $platform }}.blank')
+                {{ htmlentities('@') }}section('header')
+                &lt;title&gt;Page Title and Other Head Content&lt;title&gt;
+                {{ htmlentities('@') }}endsection
                 {{ htmlentities('@') }}section('body')
                 ... your content goes here ...
+                {{ htmlentities('@') }}endsection
+                {{ htmlentities('@') }}section('footer')
+                ... to include at the bottom of the page ...
                 {{ htmlentities('@') }}endsection
             </textarea>
             <h3>Changing the Active Version</h3>
