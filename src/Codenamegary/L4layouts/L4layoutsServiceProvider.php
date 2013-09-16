@@ -21,6 +21,7 @@ class L4layoutsServiceProvider extends ServiceProvider {
 		$this->package('codenamegary/l4layouts');
         include __DIR__.'/collections.php';
         include __DIR__.'/composers.php';
+        include __DIR__.'/../../routes/demo.php';
 	}
 
 	/**
@@ -41,7 +42,7 @@ class L4layoutsServiceProvider extends ServiceProvider {
 	 */
 	public function provides()
 	{
-		return array();
+		return array('l4layouts');
 	}
 
 }
