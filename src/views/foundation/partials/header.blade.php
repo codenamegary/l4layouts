@@ -2,8 +2,8 @@
 <html>
 <head>
     @yield('header')
-    {{ basset_stylesheets('foundation-'.$foundationVersion) }}
-    {{ basset_stylesheets('font-awesome-'.$fontAwesomeVersion) }}
+    {{ basset_stylesheets('foundation-'.Config::get('l4layouts::settings.foundation.active')) }}
+    {{ basset_stylesheets('font-awesome-'.Config::get('l4layouts::settings.font-awesome.active')) }}
     {{ basset_stylesheets('header') }}
     {{ basset_javascripts('header') }}
 </head>
