@@ -1,6 +1,6 @@
 {
     "name": "codenamegary/l4layouts",
-    "description": "Simple asset manager (similar to Laravel 3) and base layouts for Twitter Bootstrap and Foundation based views.",
+    "description": "A collection of pre-loaded front-end packages and layouts including Twitter Bootstrap, Zurb Foundation and Font-Awesome for Laravel 4.",
     "keywords": ["laravel","l4"],
     "authors": [
         {
