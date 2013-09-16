@@ -1,4 +1,4 @@
 @include('l4layouts::bootstrap.partials.header')
-<body style="padding-top:53px;">
+<body>
 @yield('body')
 @include('l4layouts::bootstrap.partials.footer')
